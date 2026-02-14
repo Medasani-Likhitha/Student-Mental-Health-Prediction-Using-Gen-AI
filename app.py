@@ -9,10 +9,10 @@ structured_df = pd.read_csv("/Users/apple/PycharmProjects/Student-Mental-Health-
 
 
 if __name__ == '__main__':
-    structured_df.info()
     structured_eda(structured_df)
-    X = structured_df.drop(columns = ['Do you have Depression?'])
-    y = structured_df['Do you have Depression?'].map({'Yes': 1, "No": 0})
+    structured_df.info()
+    X = structured_df.drop(columns = ['depression'])
+    y = structured_df['depression'].map({'Yes': 1, "No": 0})
     structured_X_train, structured_X_test, structured_y_train, structured_y_test = train_test_split(X, y, test_size=0.25, random_state=42, stratify=y)
     structured_X_train_scaler = structured_preprocess(structured_X_train)
     structured_X_test_scaler = structured_preprocess(structured_X_test)

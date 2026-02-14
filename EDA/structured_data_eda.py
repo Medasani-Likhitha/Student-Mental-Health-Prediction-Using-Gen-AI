@@ -95,7 +95,7 @@ def structured_eda(df):
     plt.tight_layout(rect=[0, 0, 1, 0.96])
 
     # Save as High Quality PNG
-    png_path = Path.cwd().parent / "results" / "Student_Mental_Health_Dashboard.png"
+    png_path = Path.cwd() / "results" / "Student_Mental_Health_Dashboard.png"
     print(png_path)
     plt.savefig(png_path, dpi=300, bbox_inches='tight')
 
