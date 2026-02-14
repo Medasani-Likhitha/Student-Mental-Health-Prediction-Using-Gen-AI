@@ -1,12 +1,8 @@
-from sklearn.preprocessing import LabelEncoder, StandardScaler
-
-df.fillna(method="ffill", inplace=True)
-
-le = LabelEncoder()
-df["Gender"] = le.fit_transform(df["Gender"])
+from sklearn.preprocessing import StandardScaler
 
 scaler = StandardScaler()
-df["CGPA"] = scaler.fit_transform(df[["CGPA"]])
+def structured_preprocess(data):
+    transform_data = scaler.fit_transform(data)
+    return transform_data
 
-y = df["Depression"]
-X = df.drop("Depression", axis=1)
+

@@ -1,8 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 
-# Load dataset
-df = pd.read_csv("/Users/apple/PycharmProjects/Student-Mental-Health-Prediction-Using-Gen-AI/Datasets/Student Mental health.csv")
 
 def structured_eda(df):
 
@@ -96,10 +95,9 @@ def structured_eda(df):
     plt.tight_layout(rect=[0, 0, 1, 0.96])
 
     # Save as High Quality PNG
-    plt.savefig("Student_Mental_Health_Dashboard.png", dpi=300, bbox_inches='tight')
+    png_path = Path.cwd().parent / "results" / "Student_Mental_Health_Dashboard.png"
+    print(png_path)
+    plt.savefig(png_path, dpi=300, bbox_inches='tight')
 
     plt.show()
 
-
-# Call function
-structured_eda(df)
